@@ -1,0 +1,13 @@
+{
+  "name": "Maptiles 02",
+  "version": "1.1.0",
+  "description": "",
+  "attribution": "<a href=\"https://www.maptiler.com/engine/\">Rendered with MapTiler Engine</a>, non-commercial use only",
+  "type": "overlay",
+  "format": "webp",
+  "minzoom": "8",
+  "maxzoom": "13",
+  "scale": "1.000000",
+  "bounds": [0.00000000, -0.94880159, 1.15511559, 0.00000000],
+  "profile": "mercator"
+}
