@@ -3414,7 +3414,7 @@
                                  No código: script#wallpaper-js e o CSS de #wallpaper-layer
 
     2) MAPAS (aba Mapas)   No código: const MAPS e const ACHADOS_DIR
-       Images/MAPAS/SKYRIM/{z}/{x}/{y}.webp   tiles do MapTiler Engine, pastas de zoom 8 a 13, 256x256 cada
+       Images/MAPAS/{z}/{x}/{y}.webp         tiles do MapTiler Engine, pastas de zoom 8 a 13, 256x256 cada
        Images/MAPAS/Skyrim.webp                  OPCIONAL: imagem única de reserva (não é baixada junto com os tiles)
        Images/ACHADOS/<nome>.webp                foto de um pin: no pin escreva achado:'nome'. Sugestão 640x360 (aparece com até 180 px de altura)
        Images/ICONES/<nome>.webp                 OPCIONAL: ícone de categoria, no campo "i" de CATS. Sugestão 64x64, fundo transparente
@@ -5713,7 +5713,7 @@ const PESS = {l:'Pins Pessoais', i:'📌', c:'#7290a3'}; // categoria genérica 
 //  3) demo → imagem de grade gerada na hora (só para testar sem arquivos)
 const MAPS = [
   { id:'skyrim', name:'Skyrim', icon:'🗺️', desc:'Mapa de Skyrim.', img:'Images/MAPAS/Skyrim.webp',
-    tiles:{ url:'Images/MAPAS/SKYRIM/{z}/{x}/{y}.webp', bounds:[0,-0.94880159,1.15511559,0], minzoom:8, maxzoom:13, tileSize:256 } },
+    tiles:{ url:'Images/MAPAS/{z}/{x}/{y}.webp', bounds:[0,-0.94880159,1.15511559,0], minzoom:8, maxzoom:13, tileSize:256 } },
 ];
 
 // Pasta das imagens dos pins: no pin escreva só achado:'nome-do-arquivo' (a extensão .webp entra sozinha).
