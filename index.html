@@ -3399,6 +3399,40 @@
     </style>
   </head>
   <body>
+    <!--
+    ================================================================================
+      ÍNDICE DE IMAGENS   (procure por "ÍNDICE DE IMAGENS" para voltar aqui)
+    ================================================================================
+    Regra geral: TUDO em .webp. Pasta e nome exatos, com as mesmas maiúsculas e minúsculas
+    (hospedagem Linux e GitHub Pages diferenciam). Sem o arquivo, nada quebra: aparece o
+    emoji, o emblema ou o texto de sempre. Lista completa arquivo por arquivo: LISTA-DE-IMAGENS.txt
+
+    1) CABEÇALHO (Visão Geral)
+       Images/Logo.webp          1280x400, fundo transparente. Substitui o título em texto e é o favicon.
+                                 No código: img.hdr-logo (no cabeçalho) e o link rel="icon" (no head)
+       Images/Wallpaper.webp     1920x1080. Fundo fixo da página, com véu escuro.
+                                 No código: script#wallpaper-js e o CSS de #wallpaper-layer
+
+    2) MAPAS (aba Mapas)   No código: const MAPS e const ACHADOS_DIR
+       Images/MAPAS/SKYRIM/{z}/{x}/{y}.webp   tiles do MapTiler Engine, pastas de zoom 8 a 13, 256x256 cada
+       Images/MAPAS/Skyrim.webp                  OPCIONAL: imagem única de reserva (não é baixada junto com os tiles)
+       Images/ACHADOS/<nome>.webp                foto de um pin: no pin escreva achado:'nome'. Sugestão 640x360 (aparece com até 180 px de altura)
+       Images/ICONES/<nome>.webp                 OPCIONAL: ícone de categoria, no campo "i" de CATS. Sugestão 64x64, fundo transparente
+
+    3) FACÇÕES (aba Facções)   No código: const IMG_DIR em "8. FACÇÕES"
+       imagens/faccoes/<facção>/emblema.webp        256x256
+       imagens/faccoes/<facção>/banner.webp         640x240
+       imagens/faccoes/<facção>/npcs/<slug>.webp    256x320
+       imagens/faccoes/<facção>/itens/<slug>.webp   128x128 (object-fit: contain)
+       5 facções, 60 arquivos. ATENÇÃO: esta pasta é "imagens/" em minúsculas, diferente de "Images/".
+       Aceita .webp primeiro (.jpg e .png só são tentados se não houver o .webp)
+
+    4) BUILDS (aba Builds)   No código: IMG_DIR e IMGS dentro do script#builds-js
+       Images/BUILDS/<nome>.webp    512x512, fundo transparente. 145 arquivos diferentes, nomes em IMGS.
+
+    5) SEM ARQUIVO SEU: Troféus e Perdíveis (ícones vêm do Exophase, link externo),
+       Passo a Passo, Daédricos e Dicas (não usam imagens).
+    -->
     <div id="wallpaper-layer" aria-hidden="true"></div>
     <script id="wallpaper-js">
       ;(function () {
@@ -5679,7 +5713,7 @@ const PESS = {l:'Pins Pessoais', i:'📌', c:'#7290a3'}; // categoria genérica 
 //  3) demo → imagem de grade gerada na hora (só para testar sem arquivos)
 const MAPS = [
   { id:'skyrim', name:'Skyrim', icon:'🗺️', desc:'Mapa de Skyrim.', img:'Images/MAPAS/Skyrim.webp',
-    tiles:{ url:'Images/MAPAS/{z}/{x}/{y}.webp', bounds:[0,-0.94880159,1.15511559,0], minzoom:8, maxzoom:13, tileSize:256 } },
+    tiles:{ url:'Images/MAPAS/SKYRIM/{z}/{x}/{y}.webp', bounds:[0,-0.94880159,1.15511559,0], minzoom:8, maxzoom:13, tileSize:256 } },
 ];
 
 // Pasta das imagens dos pins: no pin escreva só achado:'nome-do-arquivo' (a extensão .webp entra sozinha).
@@ -5689,6 +5723,9 @@ const ACHADOS_DIR = 'Images/ACHADOS/';
 // name, desc, img (caminho completo) OU achado (nome do arquivo), jump (opcional, ver jump()).
 // Pegue x/y com o "🎯 Modo Calibração". Um pin = um objeto.
 const POIS = [
+  // TESTE de posição (um único pin): Whiterun, convertido das coordenadas do jogo (x=19855, y=-7423) com os limites
+  // padrão do mapa do jogo. É uma ESTIMATIVA: confira no mapa; se estiver deslocado, calibramos com 2 cidades.
+  { id: 'whiterun', cat: 'city', mapId: 'skyrim', pt: { x: 51.97, y: 56.18 }, name: 'Whiterun', desc: 'Capital da Whiterun Hold. Ponto de teste para conferir a posição no mapa.' },
 ];
 
 // ══════════════════════════════════════════════════════════════════
